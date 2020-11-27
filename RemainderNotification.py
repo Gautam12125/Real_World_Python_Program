@@ -10,4 +10,4 @@ if __name__ == "__main__":
         app_icon="icons/Iconsmind-Outline-Glass-Water.ico",
         timeout=2
         )
-        time.sleep(2*6)
+        time.sleep(60*60)
