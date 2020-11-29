@@ -4,6 +4,7 @@ import speech_recognition as sr
 import wikipedia
 import webbrowser
 import os
+import file_search
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 engine.setProperty('voice',voices[0].id)
@@ -21,7 +22,9 @@ def wishMe():
     else:
         speak("Good Evening!")
     
-    speak("I am Bappu Assistant Created By Gautam Baba How may I Help You?")
+    speak('''I am .... BAPPU Assistant 
+            Created By.... Gautam Sharma on 28 November 2001
+            How may I Help You?''')
 def takeCommand():
     r = sr.Recognizer()
     with sr.Microphone() as source:
@@ -33,8 +36,7 @@ def takeCommand():
         query = r.recognize_google(audio,language='en-in')
         print("User Said!: ",(query))
     except Exception as e:
-        
-
+        print(e)
         print("Say That Again Please...")
         return "None"
     return query
@@ -64,8 +66,33 @@ if __name__ == "__main__":
         elif 'time' in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
             speak(strTime)
-        
-        elif "open code" in query:
-            codePath = "C:\\Users\\SAMSUNG\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
-            os.startfile(codePath)
+        elif 'anuj' in query:
+            anuj = '''Anuj is a Good Boy He is a friend of Gautam Sharma since ninth class 
+            Now in end I am Speak Something About 
+            Yaara Teri Yaari Ko
+            Maine To Khuda Mana 
+            Meri zindagi sawaari
+            Mujhko gale lagake'''
+            speak(anuj)
+        elif 'gaurav' in query:
+            gaurav = '''Gaurav is a Smart Boy He is a friend of Gautam Sharma since college time 
+            Now in end I am Speak Something About 
+            Meri zindagi sawaari
+            Mujhko gale lagake
+            Baitha diya falak pe
+            Mujhe khaak se uthaake
+            Yaara teri yaari ko
+            Maine toh khuda maana
+            Yaad karegi duniya
+            Tera mera afsaana'''
+            speak(gaurav)
+        elif 'bhavishya' in query:
+            bhavishya = '''Bhavishya is a Topper Boy He is a friend of Gautam Sharma since College Time 
+            He Is Topper of Poornima Institute of Engineering and Technology
+            Now in end I am Speak Something About 
+            Yaara Teri Yaari Ko
+            Maine To Khuda Mana
+            Meri zindagi sawaari
+            Mujhko gale lagake '''
+            speak(bhavishya)
         
